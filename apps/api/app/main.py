@@ -3,8 +3,8 @@ from .routers.health import router as health_router
 from .routers.ingest import router as ingest_router
 from .routers.kpis import router as kpis_router
 
-app = FastAPI(title = "People Analytics Platform", version = "0.1.0")
+app = FastAPI(title="People Analytics Platform", version="0.1.0")
 
 app.include_router(health_router)
 app.include_router(ingest_router)
-app.include_router(kpis_router)
+app.include_router(kpis_router) 
