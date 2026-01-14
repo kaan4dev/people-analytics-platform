@@ -1,0 +1,4 @@
+employee_id,date,status
+E001,2025-01-01,present
+E001,2025-01-02,absent
+E002,2025-01-01,present

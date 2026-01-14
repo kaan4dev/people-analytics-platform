@@ -1,7 +1,7 @@
 import csv, io, uuid
 from fastapi import APIRouter, UploadFile, File, Depends, HTTPException
-from sqlalcemy.orm import Session
-from sqlalcemy import text
+from sqlalchemy.orm import Session
+from sqlalchemy import text
 from ..core.db import get_db
 from ..models.schemas import IngestResponse
 
@@ -51,4 +51,3 @@ async def ingest_attendance(file: UploadFile = File(...), db: Session = Depends(
 
     db.commit()
     return IngestResponse(run_id = run_id, rows_received = rows)
-

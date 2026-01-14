@@ -1,6 +1,6 @@
 import os
 import pandas as pd
-from sqlalcemy import create_engine
+from sqlalchemy import create_engine, text
 
 def db_url() -> str:
     host = os.getenv("DB_HOST", "postgres")
@@ -12,7 +12,9 @@ def db_url() -> str:
 
 def main():
     engine = create_engine(db_url(), pool_pre_ping = True)
-    df = pd.read_sql("SELECT employee_id, date, status FROM raw.attendance", engine)
+    with engine.connect() as conn:
+        result = conn.execute(text("SELECT employee_id, date, status FROM raw.attendance"))
+        df = pd.DataFrame(result.fetchall(), columns = result.keys())
 
     issues = []
     if df.empty:

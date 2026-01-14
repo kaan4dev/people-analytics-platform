@@ -1,0 +1,1 @@
+{"_invocation_id": "f923c474-e106-4a57-b0ea-91d33f4ed856", "linked": {"0": {"name": "model.people_dbt.stg_attendance", "type": "model", "succ": [1, 2]}, "1": {"name": "model.people_dbt.dim_employee", "type": "model"}, "2": {"name": "model.people_dbt.fact_attendance", "type": "model"}}}
