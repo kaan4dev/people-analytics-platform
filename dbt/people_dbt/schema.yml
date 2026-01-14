@@ -1,0 +1,16 @@
+version: 2
+
+models:
+  - name: stg_attendance
+    columns:
+      - name: employee_id
+        tests: [not_null]
+      - name: date
+        tests: [not_null]
+      - name: status
+        tests: [not_null]
+
+  - name: fact_attendance
+    columns:
+      - name: employee_id
+        tests: [not_null]

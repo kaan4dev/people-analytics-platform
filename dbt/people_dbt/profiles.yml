@@ -1,0 +1,12 @@
+people_dbt:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: postgres
+      user: people
+      password: people
+      port: 5432
+      dbname: people
+      schema: curated
+      threads: 2
